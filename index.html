@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mannheim Craft Brewery | Crafted with Intention</title>
+    <meta name="description"
+        content="Mannheim Craft Brewery - Rooted in German precision and driven by Indian curiosity. We don’t just brew beer — we craft purpose.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:wght@700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Animated Intro Overlay -->
+    <div id="intro-overlay" class="intro-overlay">
+        <div class="intro-content">
+            <img src="assets/logo.png" alt="Mannheim Logo" class="intro-logo" id="intro-logo">
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="main-nav">
+        <div class="nav-container">
+            <div class="nav-left">
+                <a href="#home" class="nav-link">HOME</a>
+                <a href="#products" class="nav-link">PRODUCTS</a>
+            </div>
+            <div class="nav-center">
+                <div class="logo-placeholder" id="nav-logo-target"></div>
+            </div>
+            <div class="nav-right">
+                <a href="#about" class="nav-link">ABOUT US</a>
+                <a href="#signup" class="nav-btn">SIGN UP</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">ALL YOU NEED IS GOOD BEER & GREAT TASTE</h1>
+            <p class="hero-subtitle">Experience the art of brewing with Mannheim.</p>
+            <a href="#story" class="cta-button">Explore Our Story</a>
+        </div>
+    </header>
+
+    <!-- Section 1: Our Story -->
+    <section class="story-section" id="story">
+        <div class="container-wide">
+            <div class="story-grid">
+                <!-- Left Column: Content -->
+                <div class="story-content-col">
+                    <div class="story-header">
+                        <span class="section-title">Our Story</span>
+                        <h2 class="story-heading">Crafted with Intention. <span class="accent">Shared with
+                                Purpose</span></h2>
+                    </div>
+
+                    <div class="story-view-container">
+                        <!-- Initial View -->
+                        <div id="story-main" class="story-view active">
+                            <p class="story-subheading">Because at Mannheim Craft Brewery, we don’t just brew beer — we
+                                craft purpose.</p>
+                            <p class="story-text">
+                                Rooted in German precision and driven by Indian curiosity, our beers celebrate quality,
+                                creativity, and community. From our flagship lagers to seasonal experiments, every pour
+                                is brewed with intention. Because for us, it’s not just about what’s in the glass — it’s
+                                about who you share it with.
+                            </p>
+                            <button id="know-more-btn" class="know-more-btn">KNOW MORE</button>
+                        </div>
+
+                        <!-- Know More View -->
+                        <div id="know-more-content" class="story-view">
+                            <div class="editorial-content">
+                                <p class="highlight-text">Mannheim Craft Brewery was born from a shared belief — that
+                                    great beer has the power to bring people together.</p>
+                                <p>Founded by a team of friends turned visionaries, each with a different story but a
+                                    common passion for craft, Mannheim was built to challenge convention and celebrate
+                                    connection.</p>
+                                <p>Rooted in the precision of German brewing and shaped by the energy of India’s
+                                    evolving palate, we brew with intention — every pint reflecting our philosophy of
+                                    quality without compromise.</p>
+                                <p>Here, every sip, every smile, and every shared story is part of something larger — a
+                                    movement rooted in purpose, passion, and people.</p>
+                                <button id="show-less-btn" class="back-btn">← BACK TO STORY</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Image -->
+                <div class="story-image-col">
+                    <div class="image-wrapper">
+                        <img src="assets/story_img.png" alt="Brewery Interior" class="parallax-img" id="story-img">
+                        <div class="image-overlay"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
