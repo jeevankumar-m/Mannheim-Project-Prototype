@@ -11,7 +11,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const storySection = document.getElementById('story');
     const storyImg = document.getElementById('story-img');
 
-    // 1. Intro Animation
+    const heroTitle = document.querySelector('.hero-title');
+    const heroSubtitle = document.querySelector('.hero-subtitle');
+    const heroCta = document.querySelector('.cta-button');
+
+    // 1. Split Text for Hero Title
+    if (heroTitle) {
+        const text = heroTitle.innerText;
+        heroTitle.innerHTML = text.split(' ').map((word, i) =>
+            `<span class="word" style="transition-delay: ${i * 0.1}s">${word}</span>`
+        ).join(' ');
+    }
+
+    // 2. Intro Animation Sequence
     setTimeout(() => {
         introLogo.classList.add('move-to-nav');
         setTimeout(() => {
@@ -23,6 +35,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 navLogo.alt = 'Mannheim Logo';
                 navLogo.className = 'nav-logo';
                 navLogoTarget.appendChild(navLogo);
+
+                // Trigger Hero Animations
+                setTimeout(() => {
+                    if (heroTitle) heroTitle.classList.add('animate');
+                    if (heroSubtitle) heroSubtitle.classList.add('animate');
+                    if (heroCta) heroCta.classList.add('animate');
+                }, 500);
+
                 setTimeout(() => {
                     introOverlay.style.display = 'none';
                 }, 1500);
@@ -30,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 300);
     }, 1000);
 
-    // 2. View Switching Logic
+    // 3. View Switching Logic (Story Section)
     const openKnowMore = () => {
         storyMain.classList.remove('active');
         setTimeout(() => {
@@ -45,14 +65,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 400);
     };
 
-    knowMoreBtn.addEventListener('click', openKnowMore);
-    showLessBtn.addEventListener('click', closeKnowMore);
+    if (knowMoreBtn) knowMoreBtn.addEventListener('click', openKnowMore);
+    if (showLessBtn) showLessBtn.addEventListener('click', closeKnowMore);
 
-    // 3. Scroll Effects (Image Parallax & Auto-close)
+    // 4. Scroll Effects
     window.addEventListener('scroll', () => {
         const scrolled = window.pageYOffset;
 
-        // Hero Parallax
+        // Hero Background Parallax
         const hero = document.querySelector('.hero');
         if (hero) {
             hero.style.backgroundPositionY = -(scrolled * 0.5) + 'px';
@@ -70,9 +90,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Auto-close logic
-        if (knowMoreContent.classList.contains('active')) {
+        if (knowMoreContent && knowMoreContent.classList.contains('active')) {
             const sectionRect = storySection.getBoundingClientRect();
-            // If user scrolls significantly above the section
             if (sectionRect.top > 300) {
                 closeKnowMore();
             }
